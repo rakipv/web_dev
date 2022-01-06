@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+  <cd>
+  <Car-Name>Santro</Car-Name>
+<Car-Make>Hyundai</Car-Make>
+<Car-Type>Huncthback</Car-Type>
+<Gear-Type>Manual</Gear-Type>
+   
+  </cd>
+  <cd>
+  <Car-Name>maruti-800</Car-Name>
+<Car-Make>suzuki</Car-Make>
+<Car-Type>compact</Car-Type>
+<Gear-Type>Manual</Gear-Type>
+  </cd>
+  <cd>
+      <Car-Name> Ambassador</Car-Name>
+<Car-Make> Hindustan Motors of India</Car-Make>
+<Car-Type>compact</Car-Type>
+<Gear-Type>Manual</Gear-Type>
+  </cd>
+  <cd>
+          <Car-Name> xuv-300</Car-Name>
+<Car-Make> mahendra</Car-Make>
+<Car-Type>suv</Car-Type>
+<Gear-Type>Manual</Gear-Type>
+  </cd>
+  <cd>
+     <Car-Name> xuv-300-au</Car-Name>
+<Car-Make> mahendra</Car-Make>
+<Car-Type>suv</Car-Type>
+<Gear-Type>automatic</Gear-Type>
+  </cd>
+  <cd>
+  <Car-Name> creta</Car-Name>
+<Car-Make> hyundai</Car-Make>
+<Car-Type>suv</Car-Type>
+<Gear-Type>automatic</Gear-Type>
+  </cd>
+  <cd>
+    <Car-Name> creta-au</Car-Name>
+<Car-Make> hyundai</Car-Make>
+<Car-Type>suv</Car-Type>
+<Gear-Type>automatic</Gear-Type>
+  </cd>
+  <cd>
+   <Car-Name> alto-au</Car-Name>
+<Car-Make> suzuki</Car-Make>
+<Car-Type>compact</Car-Type>
+<Gear-Type>automatic</Gear-Type>
+  </cd>
+  <cd>
+   <Car-Name> alt0</Car-Name>
+<Car-Make> suzuki</Car-Make>
+<Car-Type>compact</Car-Type>
+<Gear-Type>gear</Gear-Type>
+  </cd>
+  <cd>
+    <Car-Name> jeep</Car-Name>
+<Car-Make> mahindra</Car-Make>
+<Car-Type>4wd</Car-Type>
+<Gear-Type>semi</Gear-Type>
+  </cd>
+  <cd>
+    <Car-Name> access-125</Car-Name>
+<Car-Make> suzuki</Car-Make>
+<Car-Type>moped</Car-Type>
+<Gear-Type>gearless</Gear-Type>
+  </cd>
+  <cd>
+     <Car-Name> n-torq</Car-Name>
+<Car-Make> TVS</Car-Make>
+<Car-Type>moped</Car-Type>
+<Gear-Type>gearless</Gear-Type>
+  </cd>
+  <cd>
+    <Car-Name>fz</Car-Name>
+<Car-Make> yamaha</Car-Make>
+<Car-Type>bike</Car-Type>
+<Gear-Type>gear</Gear-Type>
+  </cd>
+  <cd>
+    <Car-Name>star-city</Car-Name>
+<Car-Make> hero-honda</Car-Make>
+<Car-Type>bike</Car-Type>
+<Gear-Type>gear</Gear-Type>
+  </cd>
+  <cd>
+   <Car-Name>victor</Car-Name>
+<Car-Make> tvs</Car-Make>
+<Car-Type>bike</Car-Type>
+<Gear-Type>gear</Gear-Type>
+  </cd>
+  <cd>
+    <Car-Name>tvs-heavyduty</Car-Name>
+<Car-Make> tvs</Car-Make>
+<Car-Type>moped</Car-Type>
+<Gear-Type>gear</Gear-Type>
+  </cd>
+ 
+</catalog>
+
