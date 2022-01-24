@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ad2fa80212.js" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/ad2fa80212.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>Admin</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse container" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+                <a type="button" class="nav-link" 
+                    onclick="display()">
+                  INSTRUCTOR DETAILS
+            </a>
+            </li>
+            <li class="nav-item">
+              <a type="button" class="nav-link" data-toggle="modal" data-target="#new">ADD NEW INSTRUCTOR DETAILS</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="modal fade" id="new" tabindex="-1" aria-labelledby="new" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="new">ENTER INSTRUCTOR DETAILS</h5>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="Name">Name</label>
+                        <input type="text" class="form-control" id="Name" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">Enter Full Name</small>
+
+                      </div>
+                    <div class="form-group">
+                      <label for="Name">Age</label>
+                      <input type="text" class="form-control" id="Age" aria-describedby="emailHelp">
+                          <small id="emailHelp" class="form-text text-muted">Enter Your Current Age .Min Age is Above 20 <br></small>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Gender</label>
+                        <div class="form-floating">
+  <select class="form-select" id="Gender" aria-label="Floating label select example">
+    <option value="Female">Female</option>
+    <option value="Male">Male</option>
+    <option value="Others">Others</option>
+  </select>
+</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bill">Phone Number</label>
+                        <input type="text" class="form-control" id="Phone" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">Enter Valid 10 Digit Mobile Number</small>
+
+                    </div><div class="form-group">
+    <label for="exampleInputEmail1">Email Address</label>
+    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>    <div class="form-group">
+                        <label for="bill">License Number</label>
+                        <input type="text" class="form-control" id="ll" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">Enter Valid 10 Digit Mobile Number</small>
+
+                    </div>
+
+                    <div class="form-group">
+      <div class="form-group">
+                        <label for="bill">Aadhar Number</label>
+                        <input type="text" class="form-control" id="aad" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">Enter Your 12 Digit Aadhar Number</small>
+
+                    </div>
+          <div class="form-group">
+      <div class="form-group">
+                        <label for="bill">User Name</label>
+                        <input type="text" class="form-control" id="un" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">Enter Your User Name</small>
+
+                    </div>
+          <div class="form-group">
+      <div class="form-group">
+                        <label for="bill">Password</label>
+                        <input type="text" class="form-control" id="pass" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">Enter Your Password following all condtions <br>Password must contain the following:<br> <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+  <p id="number" class="invalid">A <b>number</b></p>
+  <p id="length" class="invalid">Minimum <b>8 characters</b></p></small>
+                         
+ 
+
+
+                    </div></div></div></div></form>
+
+               
+               
+                    <div class="form-group">
+
+                      <a type="button" class="btn btn-primary" onclick="add()">Submit</a>
+                    </div>
+                  </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="new2" tabindex="-1" aria-labelledby="new2" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="new">ENTER FLEETDETAILS</h5>
+            </div>
+            <div class="modal-body">
+                <form>
+                     <label for="Name">Name</label>
+                        <input type="text" class="form-control" id="Name1" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">Enter Full Name</small>
+
+                    
+                    <div class="form-group">
+                      <label for="Name">Age</label>
+                 <input type="text" class="form-control" id="Age1" aria-describedby="emailHelp">
+                          <small id="emailHelp" class="form-text text-muted">Enter Your Current Age .Min Age is Above 20 <br></small>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type">Gender</label>
+                        <div class="form-floating">
+  <select class="form-select" id="Gender1" aria-label="Floating label select example">
+    <option value="Female">Female</option>
+    <option value="Male">Male</option>
+    <option value="Others">Others</option>
+  </select>
+</div></div>
+                
+
+                    <div class="form-group">
+                        <label for="bill">Phone Number</label>
+                        <input type="text" class="form-control" id="Phone1" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">Enter Valid 10 Digit Mobile Number</small>
+
+                    </div>
+
+                    <div class="form-group">
+    <label for="exampleInputEmail1">Email Address</label>
+    <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>    
+
+  <div class="form-group">
+                        <label for="bill">License Number</label>
+                        <input type="text" class="form-control" id="ll1" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">Enter Valid 10 Digit Mobile Number</small>
+
+                    </div>
+
+                    <div class="form-group">
+   
+                        <label for="bill">Aadhar Number</label>
+                        <input type="text" class="form-control" id="aad1" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">Enter Your 12 Digit Aadhar Number</small>
+
+
+                    </div>
+
+     
+      <div class="form-group">
+                        <label for="bill">User Name</label>
+                        <input type="text" class="form-control" id="un1" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">Enter Your User Name</small>
+
+                    </div>
+         
+      <div class="form-group">
+                        <label for="bill">Password</label>
+                        <input type="text" class="form-control" id="pass1" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">Enter Your Password following all condtions <br>Password must contain the following:<br> <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+  <p id="number" class="invalid">A <b>number</b></p>
+  <p id="length" class="invalid">Minimum <b>8 characters</b></p></small>
+                         
+ </div>
+                 
+                    <div class="form-group">
+                      <a type="button" class="btn btn-primary" onclick="replace()">Submit</a>
+                    </div>
+                  </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="container">
+        <table id="id" class="table"></table>
+    </div>
+    <script src="driver.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+</body>
+</html>

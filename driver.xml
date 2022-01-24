@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='driver.xsl'?>
+<fleet>
+   <cd>
+      <Name>praveen</Name>
+      <Age>20</Age>
+      <gender>male</gender>
+      <Phone>938021</Phone>
+      <Email>rakesh@gmail.com</Email>
+      <License_no>12133</License_no>
+      <Aadhar_No>asassaasasas</Aadhar_No>
+      <Username>a</Username>
+      <Password>xxx</Password>
+   </cd>
+</fleet>
