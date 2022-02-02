@@ -1,0 +1,528 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRIVING LICENSE RENEWAL</title>
+</head>
+<body onload="myfunction()">
+
+   
+
+  
+
+      
+            <section class="form-container">
+
+                <form  id="form" >
+                    <h1 class="form-header">DRIVING LICENSE RENEWAL</h1>
+
+    <div class="form">
+                <div class="form-item form-item1">
+            <div class="input-control">
+                <label for="nameid">Name</label>
+                <input type="text" id="nameid">
+            </div>
+        </div>
+                <div class="form-item form-item1">
+
+            <div class="input-control">
+                <label for="emailid">Email</label>
+                <input type="text" id="emailid">
+            </div>
+        </div>
+                <div class="form-item form-item2">
+
+            <div class="input-control">
+                <label for="mobileid">mobile</label>
+                <input type="text" id="mobileid">
+            </div>
+</div>
+
+                <div class="form-item form-item2">
+
+             <div class="input-control">
+                <label for="ad">License Number</label>
+                <input type="number" id="adid">
+            </div>
+</div>
+
+<div class="btn-container">
+                  
+            <div class="btns">
+                <button id="delid" class="btn btn-glow form-btn">Delete</button>
+                <button id="saveid" class="btn btn-glow form-btn">Save</button>
+            </div>
+</div>
+
+        </form>
+        <!--
+        <div class="btn-container">
+                  
+            
+                <button class="btn btn-glow form-btn"   onclick="myfunction1()">SHOW COOKIE DATA</button>
+                <button class="btn btn-glow form-btn" onclick="sdd()">SHOW SESSION DATA</button>
+                                <button  class="btn btn-glow form-btn"  onclick="lss()">SHOW LOCAL STORAGE DATA</button>
+
+
+         
+</div>-->
+
+    </section>
+
+    <div class="form-container">
+        <div id="myDIV">
+       
+            <h1 class="form-header">Cookie data</h1>
+
+            Name : <h4 id="cookie1"></h4><br>
+            Email :<h4 id="cookie2"></h4><br>
+            Mobile :<h4 id="cookie3"></h4><br>
+            License Number:<h4 id="cookie4"></h4>
+      
+</div>
+
+
+           <div id="myDIV">
+            <h1 class="form-header">Session data</h1>
+            Name :<h4 id="ss1"></h4><br>
+            Email :<h4 id="ss2"></h4><br>
+            Mobile :<h4 id="ss3"></h4><br>
+            Aadhar :<h4 id="ss4"></h4>
+        </div>
+
+           <div id="myDIV">
+
+            <h1 class="form-header">Local storage data</h1>
+            Name :<h4 id="ls1"></h4>
+            Email :<h4 id="ls2"></h4>
+            Mobile :<h4 id="ls3"></h4>
+            Aadhar :<h4 id="ls4"></h4>
+     
+    </div>
+</div>
+    <!------script code ------------------------>
+    <script>
+
+        function myfunction(){
+            let user = getCookie("Mydetails");
+            if (user != "") 
+            {
+                console.log(user)
+                displaydata();
+            } 
+            else
+            {   
+                console.log(user)
+            }
+        }
+
+
+        // display cookies function 
+        function displaydata(){
+            var carray = getCookie("Mydetails").split(",");
+
+            let c1 = carray[0];
+            let c2 = carray[1];
+            let c3 = carray[2];
+            let c4=carray[3];
+
+            document.getElementById("cookie1").innerHTML = c1;
+            document.getElementById("cookie2").innerHTML = c2;
+            document.getElementById("cookie3").innerHTML = c3;
+               document.getElementById("cookie4").innerHTML = c4;
+
+            getsession();
+
+            getlocal();
+
+        }
+
+        //   get cookies 
+        function getCookie(cName) {
+            const name = cName + "=";
+            const cDecoded = decodeURIComponent(document.cookie); //to be careful
+            if(cDecoded !="")
+            {
+                const cArr = cDecoded.split('; ');
+                let res;
+                cArr.forEach(val => {
+                    if (val.indexOf(name) === 0) res = val.substring(name.length);
+                })
+                return res
+            }
+            else {
+                return "";
+            }
+            
+        }
+
+
+        //   get session data  
+        function getsession(){
+            let SSName = sessionStorage.getItem("myname");
+            let SSemail = sessionStorage.getItem("myemail");
+            let SSmobile = sessionStorage.getItem("mymobile");
+                let SSaadhar = sessionStorage.getItem("myadhar");
+
+            document.getElementById("ss1").innerHTML = SSName
+            document.getElementById("ss2").innerHTML = SSemail
+            document.getElementById("ss3").innerHTML = SSmobile
+                        document.getElementById("ss4").innerHTML = SSaadhar
+
+        }
+
+        //   get local storage data 
+        function getlocal(){
+            let LSName = localStorage.getItem("myname");
+            let LSemail = localStorage.getItem("myemail");
+            let LSmobile = localStorage.getItem("mymobile");
+            let LSaadhar=localStorage.getItem("myadhar")
+
+            document.getElementById("ls1").innerHTML = LSName
+            document.getElementById("ls2").innerHTML = LSemail
+            document.getElementById("ls3").innerHTML = LSmobile
+            document.getElementById("ls4").innerHTML = LSaadhar
+
+        }
+
+
+
+        // variables and event listeners 
+        document.getElementById("delid").addEventListener("click",deletecookies)
+        document.getElementById("delid").addEventListener("click",delsession)
+        document.getElementById("delid").addEventListener("click",dellocal)
+
+        document.getElementById("saveid").addEventListener("click",savefun)
+        let name = document.getElementById("nameid");
+        let email = document.getElementById("emailid");
+        let mobile = document.getElementById("mobileid");
+        let aadhar=document.getElementById("adid")
+                let color = document.getElementById("colorid");
+
+        let img1 = document.getElementById("bgid1");
+        let img2 = document.getElementById("bgid2");
+        let img3 = document.getElementById("bgid3");
+        let imgpath = "";
+
+        
+
+        function savefun(){
+            if(name.value=="" || email.value=="" || mobile.value=="" )
+            {   
+                alert("No field should be left empty!");
+                event.preventDefault();
+            }
+            else{
+                n1 = name.value;
+                n2 = email.value;
+                n3 = mobile.value;
+                n4=aadhar.value;
+
+
+                setCookie(n1,n2,n3,n4);
+
+                setsession(n1,n2,n3,n4);
+
+                setlocal(n1,n2,n3,n4);
+
+                alert("submitted successfully");
+                console.log(getCookie("Mydetails"));
+                event.preventDefault();
+            }
+              
+        }
+
+        // CREATING COOKIES 
+        function setCookie(name, email, mobile,aadhar) {
+            console.log(imgpath)
+            //document.cookie = "myname=" + name+","+"myemail="+email+","+"mymobile="+mobile+","+"mycolor="+color+","+"myimg="+imgpath; 
+            document.cookie = "Mydetails="+ name+","+email+","+mobile+","+aadhar;
+
+            const d = new Date();
+            d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+            let expires = "expires="+d.toUTCString();
+            document.cookie +=  ";" + expires;
+            console.log(document.cookie);
+        }
+
+        // Delete cookies  
+        function deletecookies(){
+
+            var user = getCookie("Mydetails");
+            if (user != "") 
+            {
+                const d = new Date();
+                d.setTime(d.getTime() + (-365 * 24 * 60 * 60 * 1000));
+                let expires = "expires="+d.toUTCString();
+                document.cookie +=  ";" + expires;
+                console.log(document.cookie);
+            } 
+            else
+            {   
+                alert("No cookies to delete!")
+            } 
+        }
+
+        //creating session data  
+       function setsession(name, email, mobile,aadhar){
+            sessionStorage.setItem("myname", name);
+            sessionStorage.setItem("myemail", email);
+            sessionStorage.setItem("mymobile", mobile);
+            sessionStorage.setItem("myfunction",aadhar);
+       }
+
+       function setlocal(name, email, mobile,aadhar){
+            localStorage.setItem("myname", name);
+            localStorage.setItem("myemail", email);
+            localStorage.setItem("mymobile", mobile);
+            localStorage.setItem("myadhar",aadhar);
+       }
+       
+       //delteing session and local storage data  
+       function delsession(name, email, mobile,aadhar){
+            sessionStorage.removeItem("myname", name);
+            sessionStorage.removeItem("myemail", email);
+            sessionStorage.removeItem("mymobile", mobile);
+            sessionStorage.removeItem("myadhar",aadhar);
+       }
+
+       function dellocal(name, email, mobile,aadhar){
+            localStorage.removeItem("myname", name);
+            localStorage.removeItem("myemail", email);
+            localStorage.removeItem("mymobile", mobile);
+            localStorage.removeItem("myadhar",aadhar);
+       }
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+    html {
+  background: rgb(12,12,12);
+  font-family: sans-serif;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+@keyframes slide-up2 {
+    0% {
+        transform: translateY(.5em);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes glow-load {
+    0% {
+        box-shadow: none;
+    }
+    100%{
+        box-shadow:
+            0px 0px 50px #f0860c;
+    }
+}
+
+@keyframes continuous-glow {
+    0% {
+    box-shadow: 0 0 5px rgba(255, 157, 9, 0.39), inset 0 0 5px rgba(255, 153, 0, 0.356), 0 2px 0 #000;
+    }   
+    100% {
+    box-shadow: 0 0 20px rgba(255, 153, 0, 0.6), inset 0 0 10px rgba(255, 145, 0, 0.4), 0 2px 0 #000;
+    }
+}
+
+@keyframes blur-load {
+    0% {
+        opacity: 0;
+        filter:blur(0.2em);
+    }
+    100%{
+        opacity: 1;
+        filter:blur(0);
+    }
+}
+
+.form-container {
+  margin: auto;
+  width: 90%;
+}
+
+.form-item,
+.textarea-div {
+    opacity: 0;
+}
+
+.form-item1 {
+    animation: .2s cubic-bezier(0.47, 0, 0.745, 0.715) .3s 1 slide-up2 ;
+  animation-fill-mode: forwards;
+}
+
+.form-item2 {
+    animation: .2s cubic-bezier(0.47, 0, 0.745, 0.715) .4s 1 slide-up2 ;
+  animation-fill-mode: forwards;
+}
+
+.form-item3 {
+    animation: .2s cubic-bezier(0.47, 0, 0.745, 0.715) .5s 1 slide-up2 ;
+  animation-fill-mode: forwards;
+}
+
+.form-item4 {
+    animation: .2s cubic-bezier(0.47, 0, 0.745, 0.715) .6s 1 slide-up2 ;
+  animation-fill-mode: forwards;
+}
+
+form {
+    background-color: rgb(12, 12, 12);
+    border-radius: 1.25em;
+    padding: 1.5em;
+    animation: 1s cubic-bezier(0.47, 0, 0.745, 0.715) .7s 1 glow-load;
+    animation-fill-mode: forwards;
+}
+
+form label {
+    color: rgb(191, 191, 191);
+}
+
+option, select, input, .textarea-div textarea {
+  background: #1b1a1a;
+  color: rgb(255, 229, 195);
+}
+
+.form-header {
+    text-align: center;
+    font-size: 28px;
+    padding: 0;
+    margin-bottom: 1.25em;
+    color: #f0860c  ;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.35em;
+    margin-top: 0.35em;
+}
+
+input:not(.btn), select {
+    padding: 0.625em 1em;
+    width: 100%;
+    outline: 0;
+    margin-bottom: 1.25em;
+    border-radius: 1.25em;
+    border: 0;
+}
+
+.textarea-div {
+    width: 100%;
+}
+
+textarea {
+    padding: 10px;
+    width: 100%;
+    outline: 0;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: 0;
+    font-size: 14px;
+    height: 100px;
+}
+
+.btn-container {
+  margin: auto;
+  padding-bottom: 1em;
+}
+
+.form-btn { 
+    background: rgb(12, 12, 12) ;
+    border: none ;
+    margin-top: 1em ;
+  font-size: 20px;
+  padding: .5em;
+}
+
+.btn-glow {
+    animation: .5s ease-out 0s 1 blur-load;
+    border-radius: 2em ;
+    color: white ;
+    transition:.4s ;
+}
+
+.btn-glow:hover {
+    box-shadow: 0px 0px 10px #f0860c;
+}
+
+.form-btn:hover { 
+    background: #f0860c ;
+}
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus  {
+    animation: continuous-glow 800ms ease-out infinite alternate;
+    box-shadow: 0 0 5px #f0860c, inset 0 0 5px #f0860c, 0 2px 0 #000;
+    color: rgb(255, 229, 195);
+}
+
+@media only screen and (min-width: 35.8em) {
+    .form {
+        display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    }
+    
+    .form-item {
+        width: 45%;
+    }
+
+    .form-container {
+        padding: 5em 0;
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 60.625em) {
+  .form-container {
+        padding: 8em 0;
+    width: 70%;
+  }
+}
+
+#myDIV {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+ }
+
+
+
+</style>
+
+
